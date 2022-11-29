@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/897e5eb927.js" crossorigin="anonymous"></script>
+    <!-- css -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="app" class="container">
+
+        <section class="header-container">
+            <img :src="logoImg" alt="">
+            <h1>ToDo List</h1>
+        </section>
+
+        <section class="main-container">
+
+            <div class="add-task">
+                <input type="text" placeholder="Add What You Have To Do">
+                <button @click="addTask">Add</button>
+            </div>
+
+            <ul>
+                <li class="task" v-for="task in tasks">
+                    {{task.text}}
+                    <i class="fa-solid fa-trash btn-trash"></i>
+                </li>
+            </ul>
+
+        </section>
+    </div>
+
+
+    <!-- js -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
