@@ -21,17 +21,24 @@
         <section class="main-container">
 
             <div class="add-task">
-                <input type="text" placeholder="Add What You Have To Do">
+                <input type="text" placeholder="Add What You Have To Do" v-model="newTask" @KeyUp.enter="addTask">
                 <button @click="addTask">Add</button>
             </div>
 
-            <ul>
-                <li class="task" v-for="task in tasks">
+            <!-- error -->
+            <div class="error" v-if="error">
+                <h3>Inserire un task di almeno 5 caratteri</h3>
+            </div>
+
+            <!-- task -->
+            <ul v-if="tasks.length > 0">
+                <li class="task" v-for="(task, index) in tasks">
                     {{task.text}}
-                    <i class="fa-solid fa-trash btn-trash"></i>
+                    <i class="fa-solid fa-trash btn-trash" @click="removeTask(index)"></i>
                 </li>
             </ul>
 
+            <h2 v-else="">Non ci sono cose da fare</h2>
         </section>
     </div>
 
