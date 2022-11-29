@@ -32,9 +32,17 @@
 
             <!-- task -->
             <ul v-if="tasks.length > 0">
-                <li class="task" v-for="(task, index) in tasks">
-                    {{task.text}}
-                    <i class="fa-solid fa-trash btn-trash" @click="removeTask(index)"></i>
+                <li class="task" v-for="(task, index) in tasks" :class="task.done ? 'task-text' : ''">
+
+                    <div>{{task.text}}</div>
+
+                    <div class="btn-check-remove">
+                        <!-- btn done -->
+                        <i class="fa-regular fa-circle-check btn-done" @click="doneTask(index)"></i>
+
+                        <!-- btn trash -->
+                        <i class="fa-solid fa-trash btn-trash" @click="removeTask(index)"></i>
+                    </div>
                 </li>
             </ul>
 

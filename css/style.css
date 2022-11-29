@@ -89,12 +89,23 @@ ul{
     border-radius: 10px;
 }
 
-.task .btn-trash{
-    text-align: end;
+.btn-done{
+    margin-right: 20px;
+}
+
+.btn-done:hover{
+    cursor: pointer;
+    color: rgb(64, 255, 0);
 }
 
 .btn-trash:hover{
     cursor: pointer;
     color: red;
 }
+
+.task-text{
+    color: rgb(64, 255, 0);
+}
+
+
 
